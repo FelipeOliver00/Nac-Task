@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+
+<head th:include="_template :: head"></head>
+
+<body>
+
+	<div class="content">
+		
+		<h1>Criar Tarefa</h1>
+
+		<form action="/task" method="POST" th:object="${task}">
+		
+			<input type="text" min="1" max="100" id="point" placeholder="Informe o Título"/>
+
+			<textarea placeholder="Descrição...."></textarea>
+		
+			<label>Pontos</label> 
+			<input type="number" min="1" max="100" id="point" /> 
+			<input type="range" min="1" max="100" id="range-point" />
+			
+		    <label>Situação</label> 
+		    <input type="number" min="1" max="100" id="point" />
+		    <input type="range" min="1"	max="100" id="range-point" />
+		  	
+		  	<div class="actions">
+				<a href="/task" class="btn" th:text="#{form.button.cancel}"></a>
+				<a class="btn red" th:href="${'#'}">apagar</a>
+				<button class="btn blue" th:text="#{form.button.save}"></button>
+			</div>
+		  	
+		</form>
+	
+	</div>
+
+</body>
+</html>
